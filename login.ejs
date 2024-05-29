@@ -1,0 +1,130 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+    body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background: linear-gradient(to top, rgba(20, 13, 13, 0.2)50%,rgba(15, 4, 4, 0.2)50%),url('https://www.shutterstock.com/image-vector/fast-delivery-by-scooter-on-260nw-1540323020.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-container {
+    max-width: 350px;
+    padding: 20px;
+    width: 100%;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 15 10 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #f30a99;
+    border-top: none ;
+    border-left: none ;
+    border-right: none ;
+    background: transparent;
+    font-size: 18px;
+    border-radius: 4px;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none; /* Add bottom margin */
+}
+button[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+ .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+.message {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.success {
+    color: #4caf50;
+}
+
+.message {
+    color: #f44336;
+}
+body{
+
+background-color: #f0f0f0;
+background: linear-gradient(to top, rgba(0,0,0,0.2)50%,rgba(0,0,0,0.2)50%),url('https://www.shutterstock.com/image-vector/fast-delivery-by-scooter-on-260nw-1540323020.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.error {
+color: red;
+}
+
+</style>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form action="/check" id="login-form" method="post">
+            <div class="form-group">
+                <label for="name">Username:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="btn">
+            <button type="submit" id="login-btn">Login</button>
+
+            <% if(locals.error) { %>
+            </div>
+            <div id="message" class="message"> <%= error %></div>
+            <% } %>
+        
+        </form>
+    </div>
+    
+</body>
+</html>
+
